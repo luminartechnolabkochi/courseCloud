@@ -11,5 +11,5 @@ class InstructorCreateForm(UserCreationForm):
 
         model=User
 
-        fields=["username","email","password1","password2","first_name"]
+        fields=["username","email","password1","password2"]
 
