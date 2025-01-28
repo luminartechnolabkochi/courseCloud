@@ -24,6 +24,10 @@ class InstructorCreateView(View):
 
             form_instance.instance.role="instructor"
 
+            form_instance.instance.is_superuser=True
+
+            form_instance.instance.is_staff=True
+
             form_instance.save()
 
             return redirect("instructor-create")
