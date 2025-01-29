@@ -86,9 +86,27 @@ class Module(models.Model):
     order=models.PositiveIntegerField()
 
     def __str__(self):
+
         return self.title
 
 
+# Lesson
+#  =>title
+#=> module_object(FK)
+
+class Lesson(models.Model):
+
+    title=models.CharField(max_length=200)
+
+    module_object=models.ForeignKey(Module,on_delete=models.CASCADE,related_name="lessons")
+
+    video=EmbedVideoField(null=True)
+
+    order=models.PositiveIntegerField()
+
+    def __str__(self):
+        
+        return f"{self.module_object.title} + {self.title}"
 
 
 

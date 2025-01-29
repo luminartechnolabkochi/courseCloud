@@ -1,7 +1,7 @@
 from django.contrib import admin
 
 # Register your models here.
-from instructor.models import User,Category,Course
+from instructor.models import User,Category,Course,Module
 
 
 admin.site.register(User)
@@ -21,5 +21,9 @@ class CourseAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Course,CourseAdmin)
+
+admin.site.register(Module)
+
+
 
 
